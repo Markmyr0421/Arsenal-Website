@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VR65JWHR8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9VR65JWHR8');
+    </script>
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soccer Slang Dictionary</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="soccer_slang.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics-compat.js"></script>
+    
+    <!-- Firebase Functions -->
+    <script src="soccer_slang_firebase.js"></script>
+</head>
+<body>
+    <div class="soccer-background"></div>
+    <div class="field-overlay"></div>
+    
+    <div class="container">
+        <header class="slang-header">
+            <div id="google_translate_element"></div>
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1 class="slang-title">Soccer Slang Dictionary</h1>
+            <p class="slang-intro">
+                Have you watched a few football games and want to boast about your football knowledge in front of your friends? Or do you want to blend into the strong soccer atmosphere in your neighborhood by sounding more professional? Whatever it is, we've got you covered!
+            </p>
+            <p class="slang-subtitle">
+                Below are over 200 soccer slang terms listed in categories, ensuring you can express yourself in every situation. You are welcome to edit or add slang terms that you know that are not on the list.
+            </p>
+            <p class="slang-subtitle" style="margin-top: 15px; font-size: 0.9rem; color: #228B22;">
+                <strong>💡 Tip:</strong> Scroll down to submit new slang terms!
+            </p>
+        </header>
+
+        <main class="slang-content">
+            <!-- Category 1: Player Types & Roles -->
+            <section class="category-section">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2 class="category-name">1. Player Types & Roles</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="category-table">
+                    <table class="slang-table">
+                        <thead>
+                            <tr>
+                                <th>Slang</th>
+                                <th>Meaning</th>
+                                <th>Example</th>
+                                <th>Demo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Target man</strong></td>
+                                <td>Tall striker, holds up ball</td>
+                                <td>"We need a target man to get those long balls."</td>
+                                <td><a href="https://www.youtube.com/watch?v=G98-wrd-41E" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Poacher</strong></td>
+                                <td>Striker who scores mainly in the box</td>
+                                <td>"He's a classic poacher, always there for rebounds."</td>
+                                <td><a href="https://www.youtube.com/watch?v=_idjejBK5YU" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Playmaker</strong></td>
+                                <td>Creative midfielder, dictates game</td>
+                                <td>"Our playmaker controls the tempo."</td>
+                                <td><a href="https://www.youtube.com/watch?v=VIClXaIK0WE" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Box-to-box</strong></td>
+                                <td>Midfielder covering defense to attack</td>
+                                <td>"He's a tireless box-to-box midfielder."</td>
+                                <td><a href="https://www.youtube.com/watch?v=jSOTmb__Rlk" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sweeper</strong></td>
+                                <td>Defender behind the back line</td>
+                                <td>"The sweeper cleared it before the striker reached it."</td>
+                                <td><a href="https://www.youtube.com/watch?v=SEz3L3d6yx4" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wing-back</strong></td>
+                                <td>Full-back who attacks on the wings</td>
+                                <td>"Our wing-backs provide width."</td>
+                                <td><a href="https://www.youtube.com/watch?v=xix20B4ar3U" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Utility player</strong></td>
+                                <td>Can play multiple positions</td>
+                                <td>"He's a utility player; we can put him anywhere."</td>
+                                <td><a href="https://www.youtube.com/watch?v=7d7gTEsMA-Q&pp=ygUkd2hhdCBpcyBhIHV0aWxpdHkgcGxheWVyIGluIGZvb3RiYWxs0gcJCU8KAYcqIYzv" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Libero</strong></td>
+                                <td>Free-roaming defender, behind back line</td>
+                                <td>"He's the last man, playing as a libero."</td>
+                                <td><a href="https://www.youtube.com/watch?v=3KWr9e0X1LU" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Trash striker</strong></td>
+                                <td>Presses but doesn't score much</td>
+                                <td>"The trash striker annoys defenders more than scoring."</td>
+                                <td><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ball-winning midfielder</strong></td>
+                                <td>Defensive midfielder who recovers the ball</td>
+                                <td>"Our ball-winning midfielder broke their attack."</td>
+                                <td><a href="https://www.youtube.com/watch?v=VIClXaIK0WE&list=PLgXkhwN4XQd_xUvvhDKy4qqptRU3R7sq-" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>False nine</strong></td>
+                                <td>Striker who drops deep to create space</td>
+                                <td>"Messi was a perfect false nine."</td>
+                                <td><a href="https://www.youtube.com/watch?v=4FWj_cg1wUQ" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Deep-lying playmaker</strong></td>
+                                <td>Midfielder who dictates from deep</td>
+                                <td>"Xabi Alonso was the ultimate deep-lying playmaker."</td>
+                                <td><a href="https://www.youtube.com/watch?v=0lKOeNqyufI" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Shadow striker</strong></td>
+                                <td>Attacks behind the main striker</td>
+                                <td>"He plays as a shadow striker, linking midfield to attack."</td>
+                                <td><a href="https://www.youtube.com/watch?v=CsFd61F5_S4&pp=0gcJCTwKAYcqIYzv" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Category 2: Skills & Moves -->
+            <section class="category-section">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2 class="category-name">2. Skills & Moves</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="category-table">
+                    <table class="slang-table">
+                        <thead>
+                            <tr>
+                                <th>Slang</th>
+                                <th>Meaning</th>
+                                <th>Example</th>
+                                <th>Demo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Nutmeg / Meg</strong></td>
+                                <td>Pass through opponent's legs</td>
+                                <td>"He meg'd the defender like nothing."</td>
+                                <td><a href="https://www.youtube.com/watch?v=kU-XXu1P9X8" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Step-over</strong></td>
+                                <td>Fancy footwork to beat defender</td>
+                                <td>"He did a step-over and went past two players."</td>
+                                <td><a href="https://www.youtube.com/shorts/tREGqXJZm14" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Scissor</strong></td>
+                                <td>Another dribbling trick</td>
+                                <td>"A scissor move left him on the floor."</td>
+                                <td><a href="https://www.youtube.com/shorts/b1kQuEqx4RI" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Roulette / Maradona turn</strong></td>
+                                <td>360° spin with ball</td>
+                                <td>"He pulled a Maradona turn in midfield."</td>
+                                <td><a href="https://www.youtube.com/shorts/FAmfmAFmPOY" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chip / Lob</strong></td>
+                                <td>Ball over goalkeeper</td>
+                                <td>"He chipped the keeper from 20 yards."</td>
+                                <td><a href="https://www.youtube.com/shorts/40UC99v2D-w" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Volley</strong></td>
+                                <td>Strike mid-air</td>
+                                <td>"What a volley from outside the box!"</td>
+                                <td><a href="https://www.youtube.com/shorts/KtwRk03YsTA" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Half-volley</strong></td>
+                                <td>Strike just after bounce</td>
+                                <td>"He scored a half-volley goal."</td>
+                                <td><a href="https://www.youtube.com/shorts/KtwRk03YsTA" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Curl / Bend</strong></td>
+                                <td>Spin to curve ball</td>
+                                <td>"He bent it into the top corner."</td>
+                                <td><a href="https://www.youtube.com/shorts/KqmrNqGaZcQ" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dummy / Feint</strong></td>
+                                <td>Pretend move to trick opponent</td>
+                                <td>"A clever dummy fooled the defender."</td>
+                                <td><a href="https://www.youtube.com/watch?v=HnHF-si5rdk&pp=ygUPY3VybCBiYWxsIG1lc3Np" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Drag-back</strong></td>
+                                <td>Pull ball back to change direction</td>
+                                <td>"He dragged it back and switched wings."</td>
+                                <td><a href="https://www.youtube.com/shorts/vgaOwcUf5tM" target="_blank" rel="noopener noreferrer">Watch Demo</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Outside-foot shot</strong></td>
+                                <td>Strike with outside of foot</td>
+                                <td>"He curled it with the outside of his foot."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rainbow flick</strong></td>
+                                <td>Flick ball over opponent with heel</td>
+                                <td>"He did a rainbow flick past two defenders."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cruyff turn</strong></td>
+                                <td>Fake pass then turn</td>
+                                <td>"The Cruyff turn left him exposed."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Elastico / Flip-flap</strong></td>
+                                <td>Quick side-to-side dribble</td>
+                                <td>"He did an elastico to beat the full-back."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Heel pass</strong></td>
+                                <td>Pass using heel</td>
+                                <td>"A cheeky heel pass set up the goal."</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Category 3: Match Situations -->
+            <section class="category-section">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2 class="category-name">3. Match Situations</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="category-table">
+                    <table class="slang-table">
+                        <thead>
+                            <tr>
+                                <th>Slang</th>
+                                <th>Meaning</th>
+                                <th>Example</th>
+                                <th>Demo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Clean sheet</strong></td>
+                                <td>No goals conceded</td>
+                                <td>"The keeper kept a clean sheet today."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Brace</strong></td>
+                                <td>Two goals in a game</td>
+                                <td>"He scored a brace in the derby."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hat-trick</strong></td>
+                                <td>Three goals in a game</td>
+                                <td>"She scored a hat-trick in the final."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Own goal</strong></td>
+                                <td>Scoring for the opposition</td>
+                                <td>"He's unlucky with an own goal."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Golden goal</strong></td>
+                                <td>Sudden-death extra time goal</td>
+                                <td>"He scored the golden goal in the final."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Silver goal</strong></td>
+                                <td>Leading at half of extra time wins</td>
+                                <td>"The silver goal decided the semi-final."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Banger</strong></td>
+                                <td>Powerful long-range shot</td>
+                                <td>"What a banger from 30 yards!"</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Screamer</strong></td>
+                                <td>Spectacular goal</td>
+                                <td>"That screamer will be goal of the season."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gaffer</strong></td>
+                                <td>Manager / coach</td>
+                                <td>"The gaffer made a clever substitution."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Derby</strong></td>
+                                <td>Local rivalry match</td>
+                                <td>"The Manchester derby is intense."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Stoppage time</strong></td>
+                                <td>Extra minutes added</td>
+                                <td>"He scored in stoppage time."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Offside trap</strong></td>
+                                <td>Defensive tactic to catch attackers offside</td>
+                                <td>"The defense executed an offside trap perfectly."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Parking the bus</strong></td>
+                                <td>Extremely defensive play</td>
+                                <td>"They parked the bus in the second half."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Flick-on</strong></td>
+                                <td>Nudge ball to teammate</td>
+                                <td>"A flick-on at the near post led to a goal."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nutmeg goal</strong></td>
+                                <td>Scoring after a nutmeg</td>
+                                <td>"He scored a nutmeg goal to open the scoring."</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Category 4: Fouls & Physical Play -->
+            <section class="category-section">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2 class="category-name">4. Fouls & Physical Play</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="category-table">
+                    <table class="slang-table">
+                        <thead>
+                            <tr>
+                                <th>Slang</th>
+                                <th>Meaning</th>
+                                <th>Example</th>
+                                <th>Demo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Hack</strong></td>
+                                <td>Heavy tackle, sometimes reckless</td>
+                                <td>"He got sent off for a hack on the winger."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Shin pad rattle / crunch</strong></td>
+                                <td>Strong tackle hitting legs</td>
+                                <td>"That crunch looked painful!"</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dive / Simulation</strong></td>
+                                <td>Faking a foul</td>
+                                <td>"He dived to win a penalty."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Studs-up</strong></td>
+                                <td>Dangerous tackle with cleats</td>
+                                <td>"A studs-up challenge can get a red card."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wedge</strong></td>
+                                <td>Sliding tackle blocking multiple players</td>
+                                <td>"He went in with a wedge and won the ball."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Flop</strong></td>
+                                <td>Dramatic fall</td>
+                                <td>"Stop flopping and play the game!"</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pull / Hold / Shirt tug</strong></td>
+                                <td>Minor fouls often ignored</td>
+                                <td>"He got a free kick after a shirt tug."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Clatter</strong></td>
+                                <td>Heavy collision</td>
+                                <td>"A clatter between the striker and keeper."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Late tackle</strong></td>
+                                <td>Tackle made after ball has gone</td>
+                                <td>"The late tackle earned a yellow."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Yank</strong></td>
+                                <td>Pulling an opponent backward</td>
+                                <td>"He got caught yanking the defender."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Scissor tackle</strong></td>
+                                <td>Two-footed tackle from side</td>
+                                <td>"Scissor tackle = red card risk."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Boarding</strong></td>
+                                <td>Shoulder charge off the ball</td>
+                                <td>"He got a foul for boarding the winger."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sledging</strong></td>
+                                <td>Talking aggressively to provoke</td>
+                                <td>"Sledging the striker worked in the match."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Forearm / Elbow</strong></td>
+                                <td>Using arm unfairly</td>
+                                <td>"An elbow in the box is a penalty."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Shoulder barge</strong></td>
+                                <td>Legal physical challenge</td>
+                                <td>"He used a shoulder barge to win possession."</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Category 5: Fans & Culture -->
+            <section class="category-section">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2 class="category-name">5. Fans & Culture</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="category-table">
+                    <table class="slang-table">
+                        <thead>
+                            <tr>
+                                <th>Slang</th>
+                                <th>Meaning</th>
+                                <th>Example</th>
+                                <th>Demo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>The Kop</strong></td>
+                                <td>Passionate Liverpool fans</td>
+                                <td>"The Kop sang all 90 minutes."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ultras</strong></td>
+                                <td>Hardcore, organized fans</td>
+                                <td>"The ultras filled the stadium with flags."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chants / Songs</strong></td>
+                                <td>Football-specific songs</td>
+                                <td>"Fans' chants lifted the team."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Away day</strong></td>
+                                <td>Traveling to support team</td>
+                                <td>"We went on an away day to Manchester."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Third half</strong></td>
+                                <td>Celebrations after match</td>
+                                <td>"The third half lasted until dawn."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Terrace / Stands</strong></td>
+                                <td>Where fans watch</td>
+                                <td>"The terrace erupted after the goal."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Marching band</strong></td>
+                                <td>Supporters bringing instruments</td>
+                                <td>"The marching band hyped the crowd."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Banner / Tifo</strong></td>
+                                <td>Large fan display</td>
+                                <td>"The fans made an amazing tifo."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Die-hards</strong></td>
+                                <td>Most loyal fans</td>
+                                <td>"Die-hards never miss a match."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chant leader / Capo</strong></td>
+                                <td>Leads fan songs</td>
+                                <td>"The capo kept everyone singing."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Supporter's trust</strong></td>
+                                <td>Fan-run group influencing club</td>
+                                <td>"The supporter's trust saved the club."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Away fans</strong></td>
+                                <td>Fans traveling to opponent stadium</td>
+                                <td>"The away fans outnumbered locals."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Home support / 12th man</strong></td>
+                                <td>Fans influencing game</td>
+                                <td>"Home support is the 12th man."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kick-off party</strong></td>
+                                <td>Pre-match fan gathering</td>
+                                <td>"We had a kick-off party before the derby."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>March / Parade</strong></td>
+                                <td>Celebrating team victory</td>
+                                <td>"Fans paraded after winning the cup."</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Category 6: Tactics & Strategy -->
+            <section class="category-section">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2 class="category-name">6. Tactics & Strategy</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="category-table">
+                    <table class="slang-table">
+                        <thead>
+                            <tr>
+                                <th>Slang</th>
+                                <th>Meaning</th>
+                                <th>Example</th>
+                                <th>Demo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>High press</strong></td>
+                                <td>Aggressive pressing</td>
+                                <td>"Liverpool play high press relentlessly."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Low block</strong></td>
+                                <td>Defensive deep formation</td>
+                                <td>"They set up a low block to survive the match."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Counter-attack / Counter</strong></td>
+                                <td>Quick attack after gaining ball</td>
+                                <td>"The counter killed them in 30 seconds."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Through ball / Thread</strong></td>
+                                <td>Pass splitting defenders</td>
+                                <td>"A perfect through ball to the striker."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Switch of play</strong></td>
+                                <td>Move ball from one side to other</td>
+                                <td>"He switched the play to open space."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Overlap</strong></td>
+                                <td>Player moves around teammate</td>
+                                <td>"The right-back overlapped to provide width."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Underlap</strong></td>
+                                <td>Player cuts inside of teammate</td>
+                                <td>"The underlap confused the defense."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Set piece / Dead ball</strong></td>
+                                <td>Free kicks, corners, penalties</td>
+                                <td>"He scored from a dead ball."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Zonal marking</strong></td>
+                                <td>Defend zones, not players</td>
+                                <td>"Zonal marking worked well on corners."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Man marking</strong></td>
+                                <td>Defend specific opponent</td>
+                                <td>"They used man marking on the striker."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Route one football</strong></td>
+                                <td>Direct, long-ball style</td>
+                                <td>"The team played route one all game."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ping / Spray</strong></td>
+                                <td>Long, accurate pass</td>
+                                <td>"A perfect ping to the winger."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>False nine</strong></td>
+                                <td>Striker drops deep to link play</td>
+                                <td>"Messi was a perfect false nine."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total football</strong></td>
+                                <td>Position interchange tactic</td>
+                                <td>"Ajax mastered total football."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tactical foul</strong></td>
+                                <td>Deliberate foul to stop counter</td>
+                                <td>"He made a tactical foul to break momentum."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pressing trap</strong></td>
+                                <td>Lure opponent into pressing</td>
+                                <td>"The pressing trap forced turnovers."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rotation</strong></td>
+                                <td>Player movement to confuse defense</td>
+                                <td>"Midfield rotation opened gaps."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Overload</strong></td>
+                                <td>More players than opponent</td>
+                                <td>"Overload on the left created space."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Deep line</strong></td>
+                                <td>Defense plays close to goal</td>
+                                <td>"A deep line to protect a lead."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>High line</strong></td>
+                                <td>Defense plays near halfway</td>
+                                <td>"High line caught the striker offside."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Build-up play</strong></td>
+                                <td>Controlled ball movement from back</td>
+                                <td>"Build-up play starts with the goalkeeper."</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Category 7: Miscellaneous / General Slang -->
+            <section class="category-section">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2 class="category-name">7. Miscellaneous / General Slang</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="category-table">
+                    <table class="slang-table">
+                        <thead>
+                            <tr>
+                                <th>Slang</th>
+                                <th>Meaning</th>
+                                <th>Example</th>
+                                <th>Demo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Biscuit / Ball</strong></td>
+                                <td>The soccer ball</td>
+                                <td>"Pass the biscuit!"</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Goalmouth scramble</strong></td>
+                                <td>Chaos near goal</td>
+                                <td>"A scramble in the goalmouth led to the winner."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Top bins / Top corner</strong></td>
+                                <td>Upper corner goal</td>
+                                <td>"He hit the top bins with a rocket."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cap</strong></td>
+                                <td>National team appearance</td>
+                                <td>"He earned 50 caps for England."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Banana kick / curl</strong></td>
+                                <td>Ball bending in air</td>
+                                <td>"He curled a banana kick into the corner."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Park the bus</strong></td>
+                                <td>Extremely defensive</td>
+                                <td>"They parked the bus for 80 minutes."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Glove-save</strong></td>
+                                <td>Goalkeeper save</td>
+                                <td>"A stunning glove-save kept them in the game."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Box</strong></td>
+                                <td>Penalty area</td>
+                                <td>"He's dangerous in the box."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Half-space</strong></td>
+                                <td>Area between wing and center</td>
+                                <td>"He exploited the half-space brilliantly."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Touchline</strong></td>
+                                <td>Sideline of pitch</td>
+                                <td>"He ran down the touchline."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Keeper / Goalie / Netminder</strong></td>
+                                <td>Goalkeeper</td>
+                                <td>"The goalie pulled off an amazing save."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dummy</strong></td>
+                                <td>Pretend to receive/pass</td>
+                                <td>"A dummy to mislead the defender."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cross / Pull-back</strong></td>
+                                <td>Pass into penalty area</td>
+                                <td>"A cross from the right nearly scored."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>One-two / Wall-pass</strong></td>
+                                <td>Quick two-pass combo</td>
+                                <td>"A perfect one-two opened the defense."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chip shot</strong></td>
+                                <td>Ball lifted over keeper</td>
+                                <td>"A cheeky chip won the match."</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dummy run</strong></td>
+                                <td>Fake run to mislead defense</td>
+                                <td>"He made a dummy run to create space."</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Submission Form Section -->
+            <section class="submission-section">
+                <div class="category-header" onclick="toggleSubmissionForm(this)">
+                    <h2 class="category-name">➕ Submit New Soccer Slang</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="submission-form-container" id="submissionFormContainer">
+                    <form id="slangSubmissionForm" class="slang-form">
+                        <div class="form-group">
+                            <label for="slangTerm">Slang Term *</label>
+                            <input type="text" id="slangTerm" name="slangTerm" required placeholder="e.g., Top bins">
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Category *</label>
+                            <select id="category" name="category" required>
+                                <option value="">Select a category...</option>
+                                <option value="1">1. Player Types & Roles</option>
+                                <option value="2">2. Skills & Moves</option>
+                                <option value="3">3. Match Situations</option>
+                                <option value="4">4. Fouls & Physical Play</option>
+                                <option value="5">5. Fans & Culture</option>
+                                <option value="6">6. Tactics & Strategy</option>
+                                <option value="7">7. Miscellaneous / General Slang</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="meaning">Meaning *</label>
+                            <textarea id="meaning" name="meaning" rows="2" required placeholder="Brief explanation of what this slang means"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="example">Example Sentence *</label>
+                            <textarea id="example" name="example" rows="2" required placeholder='e.g., "He hit the top bins with a rocket."'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="demoUrl">Demo Video URL (Optional)</label>
+                            <input type="url" id="demoUrl" name="demoUrl" placeholder="https://www.youtube.com/watch?v=...">
+                        </div>
+                        <div class="form-group">
+                            <label for="submitterName">Your Name (Optional)</label>
+                            <input type="text" id="submitterName" name="submitterName" placeholder="How you'd like to be credited">
+                        </div>
+                        <button type="submit" class="submit-btn">Submit Slang</button>
+                    </form>
+                    <div id="submissionMessage" class="submission-message"></div>
+                </div>
+            </section>
+
+            <!-- Rejected Submissions Section (Visible to all users) -->
+            <section class="rejected-section">
+                <div class="category-header" onclick="toggleRejectedSection(this)">
+                    <h2 class="category-name">❌ Rejected Submissions & Reasons</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="rejected-container" id="rejectedContainer">
+                    <div id="rejectedSubmissions" class="rejected-submissions">
+                        <p class="admin-info">No rejected submissions to display.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Admin Panel (Hidden by default, accessible via URL parameter ?admin=true) -->
+            <section id="adminPanel" class="admin-panel" style="display: none;">
+                <div class="category-header">
+                    <h2 class="category-name">🔧 Admin Panel - Review Submissions</h2>
+                </div>
+                <div class="admin-content">
+                    <div class="admin-controls">
+                        <button onclick="clearAllData()" class="clear-all-btn">🗑️ Clear All Submissions & Rejections</button>
+                        <button onclick="clearPendingOnly()" class="clear-pending-btn">Clear Pending Only</button>
+                        <button onclick="clearRejectedOnly()" class="clear-rejected-btn">Clear Rejected Only</button>
+                    </div>
+                    <div id="pendingSubmissions" class="pending-submissions">
+                        <p class="admin-info">No pending submissions.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Initialize Google Translate (language selection is done on homepage)
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'zh-CN,es,fr,de,ja',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function toggleCategory(header) {
+            const section = header.parentElement;
+            const table = section.querySelector('.category-table');
+            const icon = header.querySelector('.toggle-icon');
+            const categoryName = header.querySelector('.category-name');
+            
+            const wasActive = section.classList.contains('active');
+            section.classList.toggle('active');
+            
+            if (section.classList.contains('active')) {
+                icon.textContent = '▲';
+                // Log analytics event when category is expanded
+                if (typeof analytics !== 'undefined' && analytics && categoryName) {
+                    analytics.logEvent('category_expand', {
+                        category_name: categoryName.textContent.trim()
+                    });
+                }
+            } else {
+                icon.textContent = '▼';
+            }
+        }
+
+        // Open first category by default
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstCategory = document.querySelector('.category-section');
+            if (firstCategory) {
+                firstCategory.classList.add('active');
+                const icon = firstCategory.querySelector('.toggle-icon');
+                if (icon) icon.textContent = '▲';
+            }
+
+            // Add data-label attributes to table cells for mobile display
+            const labels = ['Slang', 'Meaning', 'Example', 'Demo'];
+            document.querySelectorAll('.slang-table tbody tr').forEach(row => {
+                row.querySelectorAll('td').forEach((cell, index) => {
+                    if (labels[index]) {
+                        cell.setAttribute('data-label', labels[index]);
+                    }
+                });
+            });
+
+            // Setup real-time listeners
+            try {
+                setupRealtimeListeners();
+                console.log('✅ Firebase listeners setup successfully');
+            } catch (error) {
+                console.error('❌ Error setting up Firebase listeners:', error);
+            }
+
+            // Check if admin panel should be shown
+            const urlParams = new URLSearchParams(window.location.search);
+            console.log('🔍 Checking URL params:', window.location.search);
+            console.log('🔍 Admin param value:', urlParams.get('admin'));
+            
+            if (urlParams.get('admin') === 'true') {
+                console.log('✅ Admin mode activated!');
+                const adminPanel = document.getElementById('adminPanel');
+                if (adminPanel) {
+                    adminPanel.style.display = 'block';
+                    console.log('✅ Admin panel displayed');
+                    loadPendingSubmissions();
+                } else {
+                    console.error('❌ Admin panel element not found!');
+                }
+            } else {
+                console.log('ℹ️ Not in admin mode (add ?admin=true to URL)');
+            }
+
+            // Load rejected submissions for all users
+            loadRejectedSubmissions();
+        });
+
+        // Toggle submission form
+        function toggleSubmissionForm(header) {
+            const section = header.parentElement;
+            const container = section.querySelector('.submission-form-container');
+            const icon = header.querySelector('.toggle-icon');
+            
+            section.classList.toggle('active');
+            
+            if (section.classList.contains('active')) {
+                icon.textContent = '▲';
+                container.style.maxHeight = '2000px';
+                container.style.padding = '25px';
+                setTimeout(() => {
+                    container.style.opacity = '1';
+                }, 10);
+            } else {
+                icon.textContent = '▼';
+                container.style.opacity = '0';
+                setTimeout(() => {
+                    container.style.maxHeight = '0';
+                    container.style.padding = '0';
+                }, 300);
+            }
+        }
+
+        // Toggle rejected submissions section
+        function toggleRejectedSection(header) {
+            const section = header.parentElement;
+            const container = section.querySelector('.rejected-container');
+            const icon = header.querySelector('.toggle-icon');
+            
+            section.classList.toggle('active');
+            
+            if (section.classList.contains('active')) {
+                icon.textContent = '▲';
+                container.style.maxHeight = '2000px';
+                container.style.padding = '25px';
+                setTimeout(() => {
+                    container.style.opacity = '1';
+                }, 10);
+            } else {
+                icon.textContent = '▼';
+                container.style.opacity = '0';
+                setTimeout(() => {
+                    container.style.maxHeight = '0';
+                    container.style.padding = '0';
+                }, 300);
+            }
+        }
+
+        // Normalize slang term for comparison (lowercase, remove spaces, handle separators)
+        function normalizeSlangTerm(term) {
+            return term.toLowerCase().replace(/\s+/g, '').replace(/[\/\|]/g, '');
+        }
+
+        // Get all existing slang terms from the page
+        function getAllExistingSlangTerms() {
+            const existingTerms = [];
+            
+            // Get all tables with slang terms
+            const tables = document.querySelectorAll('.slang-table');
+            
+            tables.forEach(table => {
+                const rows = table.querySelectorAll('tbody tr');
+                rows.forEach(row => {
+                    const slangCell = row.querySelector('td:first-child');
+                    if (slangCell) {
+                        // Extract text from the cell (removing HTML tags)
+                        const termText = slangCell.textContent.trim();
+                        // Handle terms with "/" separator (e.g., "Nutmeg / Meg")
+                        const terms = termText.split(/[\/\|]/).map(t => t.trim()).filter(t => t);
+                        terms.forEach(term => {
+                            if (term) {
+                                existingTerms.push(normalizeSlangTerm(term));
+                            }
+                        });
+                    }
+                });
+            });
+            
+            // Note: Firebase approved submissions are now checked in submitNewSlang()
+            
+            return existingTerms;
+        }
+
+        // Handle form submission
+        document.getElementById('slangSubmissionForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const messageDiv = document.getElementById('submissionMessage');
+            
+            // Check if this term already exists on the page (static HTML)
+            const slangTerm = document.getElementById('slangTerm').value.trim();
+            const existingTerms = getAllExistingSlangTerms();
+            const normalizedInput = normalizeSlangTerm(slangTerm);
+            
+            if (existingTerms.includes(normalizedInput)) {
+                messageDiv.innerHTML = '<div class="error-message">❌ This slang term already exists on the page. Please submit a different term.</div>';
+                messageDiv.style.display = 'block';
+                
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 5000);
+                
+                return;
+            }
+            
+            // Prepare form data
+            const formData = {
+                slangTerm: slangTerm,
+                category: document.getElementById('category').value,
+                meaning: document.getElementById('meaning').value.trim(),
+                example: document.getElementById('example').value.trim(),
+                demoUrl: document.getElementById('demoUrl').value.trim(),
+                submitterName: document.getElementById('submitterName').value.trim()
+            };
+            
+            // Submit using Firebase function
+            const result = await submitNewSlang(formData);
+            
+            if (result.success) {
+                messageDiv.innerHTML = '<div class="success-message">✓ Thank you! Your submission has been received and will be reviewed.</div>';
+                messageDiv.style.display = 'block';
+                this.reset();
+            } else if (result.type === 'DUPLICATE') {
+                messageDiv.innerHTML = '<div class="error-message">❌ This slang term has already been approved by admin. Please submit a different term.</div>';
+                messageDiv.style.display = 'block';
+            } else if (result.type === 'DUPLICATE_PENDING') {
+                messageDiv.innerHTML = '<div class="warning-message">⚠️ This term is already pending review. Please wait for admin approval.</div>';
+                messageDiv.style.display = 'block';
+            } else if (result.type === 'REJECTED') {
+                let message = '<div class="warning-message">';
+                message += '<strong>⚠ This term was previously rejected.</strong><br>';
+                message += '<strong>Reason:</strong> ' + (result.reason || 'No reason provided');
+                message += '<br><small>You can still submit it again if you believe it should be included.</small>';
+                message += '</div>';
+                messageDiv.innerHTML = message;
+                messageDiv.style.display = 'block';
+                
+                // Scroll to rejected section
+                setTimeout(() => {
+                    const rejectedSection = document.querySelector('.rejected-section');
+                    if (rejectedSection) {
+                        rejectedSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        if (!rejectedSection.classList.contains('active')) {
+                            rejectedSection.querySelector('.category-header').click();
+                        }
+                    }
+                }, 500);
+            } else {
+                messageDiv.innerHTML = '<div class="error-message">❌ Error submitting. Please try again.</div>';
+                messageDiv.style.display = 'block';
+            }
+            
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        });
+
+        // Note: All admin functions (loadPendingSubmissions, approveSubmission, editSubmission,
+        // rejectSubmission, loadRejectedSubmissions, loadApprovedSubmissions, clearAllData, etc.)
+        // are now in soccer_slang_firebase.js
+    </script>
+    
+    <!-- Load Google Translate script -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

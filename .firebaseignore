@@ -1,0 +1,21 @@
+# Python virtual environment
+.venv/
+__pycache__/
+
+# Git
+.git/
+.gitignore
+
+# Firebase
+.firebase/
+firebase-debug.log
+
+# System files
+.DS_Store
+*.pyc
+*.pyo
+*.pyd
+
+# Development files
+node_modules/
+

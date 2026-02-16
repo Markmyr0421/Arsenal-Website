@@ -1,0 +1,782 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    background-color: #ffffff;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Background image with transparency - full screen */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://miro.medium.com/v2/resize:fit:1280/format:webp/0*wH4-zAZeQ9bMFI74.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.5;
+    z-index: 0;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Red overlay for more Arsenal red */
+.red-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 50%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Language selector wrapper - absolute positioning */
+.language-selector-wrapper {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Language selector */
+.language-selector {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: inherit;
+}
+
+
+.language-selector:hover {
+    background-color: #f5f5f5;
+    transform: translateX(5px);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    border-color: #000000;
+    color: inherit;
+}
+
+.language-selector:active {
+    transform: translateX(3px);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    color: inherit;
+}
+
+/* Language menu dropdown */
+.language-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10000 !important;
+    min-width: 150px;
+    overflow: visible;
+    white-space: nowrap;
+    padding: 8px;
+    display: none;
+}
+
+.language-menu[style*="display: block"],
+.language-menu[style*="display:block"] {
+    display: block !important;
+}
+
+/* Hide Google Translate branding */
+.goog-te-banner-frame,
+.goog-te-gadget-icon,
+.goog-te-banner,
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Ensure translate element doesn't break layout */
+#google_translate_element {
+    display: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+}
+
+/* But allow the iframe to work */
+.goog-te-menu-frame {
+    display: none !important;
+}
+
+/* Ensure translation iframe is visible */
+.goog-te-banner-frame {
+    display: none !important;
+    height: 0 !important;
+    visibility: hidden !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+/* Ensure language menu is visible when shown */
+#languageMenu {
+    visibility: visible !important;
+}
+
+#languageMenu[style*="display: block"],
+#languageMenu[style*="display:block"] {
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Oval icons - absolute positioning */
+.oval-icon {
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    z-index: 999;
+}
+
+.oval-icon-1 {
+    left: 200px;
+}
+
+.oval-icon-2 {
+    left: 740px;
+}
+
+.oval-icon:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.oval-icon:active {
+    transform: scale(1.02);
+}
+
+/* Oval shape - sized to fit two lines of text */
+.oval-shape {
+    width: fit-content;
+    max-width: 100%;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    backdrop-filter: blur(3px);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+/* Oval text lines - all red */
+.oval-text-line {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #EF0107;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    line-height: 1.2;
+    white-space: normal;
+    word-wrap: break-word;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.3px;
+}
+
+.oval-icon:hover .oval-shape {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(0, 0, 0, 0.35);
+}
+
+/* First oval - rectangle shape */
+.oval-icon-1 .oval-shape {
+    border-radius: 6px;
+    width: 380px;
+    min-width: 380px;
+}
+
+/* Second oval - rectangle shape */
+.oval-icon-2 .oval-shape {
+    border-radius: 6px;
+    width: 420px;
+    min-width: 420px;
+}
+
+.language-option {
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    color: #000000;
+    border-bottom: 1px solid #f0f0f0;
+    user-select: none;
+}
+
+.language-option:last-child {
+    border-bottom: none;
+}
+
+.language-option:hover {
+    background-color: #f5f5f5;
+}
+
+.language-option:active {
+    background-color: #e0e0e0;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 14px;
+    height: 11px;
+    justify-content: space-between;
+}
+
+.menu-icon span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000000;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+}
+
+.language-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* About Us selector - uses same style as language selector */
+.about-us-selector {
+    text-decoration: none;
+}
+
+/* Main container - no white margins, full background visible */
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 50px;
+    background-color: transparent;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Header section */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    padding-top: 50px;
+    border-bottom: 2px solid #000000;
+    position: relative;
+    z-index: 2;
+}
+
+/* Season boxes container */
+.season-boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+/* Individual season box */
+.season-box {
+    flex: 1;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+}
+
+.season-box:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+}
+
+.season-box:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+.season-box:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.season-box:link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    display: block;
+}
+
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #000000;
+    letter-spacing: 6px;
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1.3;
+    font-style: normal;
+}
+
+/* Main content area */
+.main-content {
+    width: 100%;
+}
+
+/* Categories grid - 4 columns */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+/* Individual category column */
+.category-column {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 500px;
+    max-height: 800px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.category-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #000000;
+    letter-spacing: 1px;
+}
+
+.category-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+}
+
+/* Player card styles */
+.player-card {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-height: 60px;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+.player-card:hover {
+    background-color: #f5f5f5;
+    transform: translateX(5px);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    border-color: #000000;
+    text-decoration: none;
+    color: inherit;
+}
+
+.player-card:active {
+    transform: translateX(3px);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+}
+
+.player-card:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.player-card:link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.player-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000000;
+    line-height: 1.4;
+}
+
+.player-position {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #666666;
+    line-height: 1.2;
+}
+
+/* Flag icon styling */
+.flag-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2.4rem;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.player-card:hover .flag-icon {
+    opacity: 1;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1200px) {
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .container {
+        padding: 30px 20px;
+    }
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .season-boxes {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .season-box {
+        width: 100%;
+        font-size: 1.2rem;
+        border: 2px solid #000000;
+        background-color: #ffffff;
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px;
+    }
+    
+    .logo-container {
+        margin-bottom: 15px;
+        margin-right: 0;
+    }
+    
+    .title {
+        font-size: 2rem;
+        letter-spacing: 3px;
+        font-weight: 300;
+    }
+    
+    .category-column {
+        border: 2px solid #000000;
+        background-color: #ffffff;
+        min-height: auto;
+        max-height: none;
+    }
+    
+    .category-title {
+        color: #000000;
+        border-bottom: 1px solid #000000;
+        font-size: 1.5rem;
+    }
+    
+    .player-card {
+        padding: 10px 14px;
+        min-height: 55px;
+    }
+    
+    .player-name {
+        font-size: 0.95rem;
+    }
+    
+    .player-position {
+        font-size: 0.8rem;
+    }
+    
+    .flag-icon {
+        font-size: 1.8rem;
+        top: 8px;
+        right: 8px;
+    }
+    
+    .language-selector-wrapper {
+        left: 10px;
+        gap: 6px;
+    }
+    
+    .language-selector {
+        padding: 5px 8px;
+        gap: 5px;
+    }
+    
+    .menu-icon {
+        width: 12px;
+        height: 9px;
+        gap: 2px;
+    }
+    
+    .language-text {
+        font-size: 0.75rem;
+    }
+    
+    /* Oval icons - switch to relative positioning and stack vertically */
+    .oval-icon {
+        position: relative;
+        top: auto;
+        left: auto !important;
+        display: block;
+        margin: 10px auto;
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .oval-icon-1,
+    .oval-icon-2 {
+        left: auto !important;
+    }
+    
+    .oval-shape {
+        width: 100% !important;
+        min-width: auto !important;
+        max-width: 100%;
+        padding: 12px 16px;
+    }
+    
+    .oval-icon-1 .oval-shape,
+    .oval-icon-2 .oval-shape {
+        width: 100% !important;
+        min-width: auto !important;
+    }
+    
+    .oval-text-line {
+        font-size: 0.85rem;
+    }
+    
+    .season-boxes {
+        margin-top: 20px;
+    }
+    
+    .container {
+        padding: 15px 10px;
+    }
+}
+
+/* Mobile styles - phones */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px 8px;
+    }
+    
+    .header {
+        padding-top: 70px;
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .title {
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+    }
+    
+    .logo {
+        width: 60px;
+    }
+    
+    .logo-container {
+        margin-bottom: 10px;
+    }
+    
+    /* Oval icons - full width on mobile */
+    .oval-icon {
+        max-width: 100%;
+        margin: 8px 0;
+    }
+    
+    .oval-shape {
+        padding: 10px 12px;
+    }
+    
+    .oval-text-line {
+        font-size: 0.75rem;
+        line-height: 1.3;
+    }
+    
+    .season-boxes {
+        margin-top: 15px;
+        gap: 6px;
+    }
+    
+    .season-box {
+        font-size: 1rem;
+        padding: 8px;
+    }
+    
+    .category-column {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .category-title {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+    }
+    
+    .category-content {
+        gap: 8px;
+    }
+    
+    .player-card {
+        padding: 10px 12px;
+        min-height: 50px;
+    }
+    
+    .player-name {
+        font-size: 0.9rem;
+    }
+    
+    .player-position {
+        font-size: 0.75rem;
+    }
+    
+    .flag-icon {
+        font-size: 1.5rem;
+        top: 6px;
+        right: 6px;
+    }
+    
+    .language-selector-wrapper {
+        left: 5px;
+        gap: 4px;
+    }
+    
+    .language-selector {
+        padding: 4px 6px;
+        gap: 4px;
+    }
+    
+    .language-text {
+        font-size: 0.7rem;
+    }
+    
+    .menu-icon {
+        width: 10px;
+        height: 8px;
+    }
+    
+    .categories-grid {
+        gap: 15px;
+    }
+}

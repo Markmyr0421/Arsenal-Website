@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VR65JWHR8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9VR65JWHR8');
+    </script>
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24/25 Season - Arsenal FC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .updating-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 3px solid #EF0107;
+            border-radius: 12px;
+            padding: 40px 60px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .updating-message h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #EF0107;
+            margin-bottom: 20px;
+        }
+
+        .updating-message p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.5rem;
+            color: #333;
+            margin: 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background-color: #EF0107;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background-color: #d00006;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(239, 1, 7, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .updating-message {
+                padding: 30px 40px;
+                margin: 20px;
+            }
+
+            .updating-message h1 {
+                font-size: 2rem;
+            }
+
+            .updating-message p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="red-overlay"></div>
+    
+    <div class="updating-message">
+        <h1>Still updating...</h1>
+        <p>This page is currently under construction.</p>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+</body>
+</html>
+
