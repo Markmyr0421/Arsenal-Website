@@ -1,16 +1,16 @@
 // ============================================
 // FIREBASE CONFIGURATION & INITIALIZATION
 // ============================================
-// REPLACE WITH YOUR FIREBASE CONFIG (See Firebase_Setup_Instructions.md)
+// REPLACE WITH YOUR FIREBASE CONFIG
 const firebaseConfig = {
-    apiKey: "AIzaSyBH8fbKcOnI1ejfZsRUYzC40qW6Z89ypx8",
-    authDomain: "mark-myr-arsenal-website.firebaseapp.com",
-    databaseURL: "https://mark-myr-arsenal-website-default-rtdb.firebaseio.com",
-    projectId: "mark-myr-arsenal-website",
-    storageBucket: "mark-myr-arsenal-website.firebasestorage.app",
-    messagingSenderId: "500235602140",
-    appId: "1:500235602140:web:ddbce428f498e21bd84c19",
-    measurementId: "G-9VR65JWHR8"
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID",
+    measurementId: "YOUR_MEASUREMENT_ID"
   };
 
 // Initialize Firebase

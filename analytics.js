@@ -9,14 +9,14 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
 // Configure Google Analytics with your Measurement ID
-gtag('config', 'G-9VR65JWHR8', {
+gtag('config', 'YOUR_MEASUREMENT_ID', {
     'send_page_view': true,
     'anonymize_ip': true,  // For GDPR compliance
     'allow_google_signals': false,  // Disable personalized ads
     'cookie_flags': 'SameSite=None;Secure'
 });
 
-console.log('✅ Google Analytics loaded (Measurement ID: G-9VR65JWHR8)');
+console.log('✅ Google Analytics loaded (Measurement ID: YOUR_MEASUREMENT_ID)');
 
 // ============================================
 // CUSTOM EVENT TRACKING FUNCTIONS
